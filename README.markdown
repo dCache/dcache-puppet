@@ -96,7 +96,7 @@ dcache_conf:
 
  layoutfile: 
 ***
-<code><pre>
+<pre><code>
 
  dcache_layout:
   globals: 
