@@ -168,7 +168,7 @@ dcache_conf:
 pool setup 
 ***
 
-<code><pre>
+<pre><code>
 
  pools_setup:
   '${host.name}_01':
