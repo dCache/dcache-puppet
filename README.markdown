@@ -96,7 +96,7 @@ dcache_conf:
 
  layoutfile: 
 ***
-<code><pre>
+<pre><code>
 
  dcache_layout:
   globals: 
@@ -168,7 +168,7 @@ dcache_conf:
 pool setup 
 ***
 
-<code><pre>
+<pre><code>
 
  pools_setup:
   '${host.name}_01':
