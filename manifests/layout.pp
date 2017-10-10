@@ -8,9 +8,16 @@ class dcache::layout ($l_file = $::dcache::dcache_layout, $layout_hash = 'nodef'
       class { 'dcache::gplazma': require => Class['dcache::install'], }
     }
 
-    if deep_has_key($layout_hash, 'authorized_keys2') {
-      class { 'dcache::authorized_keys2': require => Class['dcache::install'], }
+    if deep_has_key($layout_hash, 'admin') and $::dcache::admin_ssh_keys != 'nodef' {
+      file { "${::dcache::authorized_keys2}":
+        owner   => $dcache::dcacheuser,
+        group   => $dcache::dcachegroup,
+        mode    => '0644',
+        content => join([inline_template('<%= scope["::dcache::admin_ssh_keys"].join("\n") %>'), "\n"], ''),
+        before  => Class['dcache::poolmanager']
+      }
     }
+  }
 
   if ($layout_hash != 'nodef') {
     file { "${l_file}.puppet":
