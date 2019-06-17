@@ -1,5 +1,7 @@
 # dcache #
 
+## Archived. See [https://github.com/dCache/dcache-puppet-module](https://github.com/dCache/dcache-puppet-module)
+
 
 The dCache module allows you to manage your instance with Puppet.
 
